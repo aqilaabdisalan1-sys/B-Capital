@@ -1,0 +1,586 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #fcfcfc;
+    color: #2d3748;
+    line-height: 1.6;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 6%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #1a202c;
+    letter-spacing: -0.5px;
+}
+
+.logo span {
+    color: #2ecc71;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2.2rem;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #4a5568;
+    font-weight: 500;
+    transition: color 0.25s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #2ecc71;
+}
+
+.cart-btn {
+    background-color: #2ecc71;
+    color: #ffffff;
+    border: none;
+    padding: 0.6rem 1.25rem;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.cart-btn:hover {
+    background-color: #27ae60;
+}
+
+.cart-btn:active {
+    transform: scale(0.97); 
+}
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('https://unsplash.com') center/cover no-repeat;
+    min-height: 65vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+    padding: 3rem 1.5rem;
+}
+
+.hero-content {
+    max-width: 750px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+
+.hero-content img {
+    
+    max-width: 5000px;
+    height: 400px;
+    border-radius: 10%;
+    margin-bottom: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    background-color: #ffffff;
+    padding: 4px;
+}
+
+.hero-content h1 {
+    font-size: 3.2rem;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+}
+
+.hero-content p {
+    font-size: 1.15rem;
+    color: #f7fafc;
+    max-width: 580px;
+    margin: 0.5rem auto 1.5rem auto;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #2ecc71;
+    color: #ffffff;
+    padding: 0.85rem 2.25rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(46, 204, 113, 0.2);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #27ae60;
+    transform: translateY(-2px);
+}
+
+
+.section {
+    padding: 5rem 6%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 2.1rem;
+    font-weight: 700;
+    margin-bottom: 2.5rem;
+    color: #1a202c;
+    text-align: center;
+    position: relative 
+}
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.75rem;
+}
+
+.category-card {
+    background-color: #b38989;
+    padding: 3rem 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid #edf2f7;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.01);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    cursor: pointer;
+}
+
+.category-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 5 10px 20px rgba(203, 183, 183, 0.05);
+    border-color: #14b858;
+}
+
+.category-card h3 {
+    font-size: 1.15rem;
+    color: #2d3748;
+    font-weight: 600;
+}
+
+.products-grid {
+    display: flex;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2.2rem;
+}
+
+.product-card {
+    background-color: #dcc2c2;
+    border-radius: 10px;
+    border: 1px solid #edf2f7;
+    
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.01);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+}
+.product-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover; 
+    display: block;
+    background-color: #f7fafc;
+}
+
+
+.badge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background-color: #e67e22; 
+    color: #ffffff;
+    font-size: 0.75rem;
+    padding: 0.3rem 0.7rem;
+    border-radius: 4px;
+    font-weight: 700;
+    z-index: 10;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+
+.product-card:nth-child(4) .badge {
+    background-color: #e74c3c;
+}
+
+
+.product-info {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.product-info h4 {
+    font-size: 1.15rem;
+    margin-bottom: 0.6rem;
+    color: #1a202c;
+    font-weight: 600;
+}
+
+.price {
+    display: block;
+    font-size: 1.2rem;
+    color: #2ecc71;
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+    margin-top: auto; 
+}
+
+
+.add-to-cart {
+    width: 100%;
+    background-color: #f0fbf5;
+    color: #2ecc71;
+    border: 1px solid #2ecc71;
+    padding: 0.7rem;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.add-to-cart:hover {
+    background-color: #2ecc71;
+    color: #ffffff;
+}
+
+
+footer {
+    text-align: center;
+    padding: 3rem 1.5rem;
+    background-color: #b38989;
+    color: #a0aec0;
+    font-size: 0.9rem;
+    border-top: 1px solid #2d3748;
+}
+
+/* CONTACT SECTION */
+.contact-section {
+    background-color: #f7fafc;
+    border-top: 1px solid #edf2f7;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 3.5rem;
+    align-items: start;
+    margin-top: 1rem;
+}
+
+/* Info Side */
+.contact-info h3 {
+    font-size: 1.5rem;
+    color: #1a202c;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.contact-info > p {
+    color: #718096;
+    margin-bottom: 2rem;
+    max-width: 450px;
+}
+
+.info-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.info-details p {
+    color: #4a5568;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Form Side */
+.contact-form {
+    background-color: #ffffff;
+    padding: 2.5rem;
+    border-radius: 12px;
+    border: 1px solid #edf2f7;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.01);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #4a5568;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #cbd5e0;
+    border-radius: 6px;
+    font-size: 1rem;
+    color: #2d3748;
+    background-color: #ffffff;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Focused input highlight glow */
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #2ecc71;
+    box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.15);
+}
+
+.submit-btn {
+    width: 100%;
+    background-color: #2ecc71;
+    color: #ffffff;
+    border: none;
+    padding: 0.85rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(46, 204, 113, 0.15);
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.submit-btn:hover {
+    background-color: #27ae60;
+}
+
+.submit-btn:active {
+    transform: scale(0.98);
+}
+
+/* DEALS SECTION */
+.deals-section {
+    background-color: #ffffff;
+}
+
+.deals-container {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 2.5rem;
+    margin-top: 1rem;
+}
+
+@media (max-width: 850px) {
+    .deals-container {
+        grid-template-columns: 1fr; /* Stacks vertically on smaller viewport screens */
+    }
+}
+
+/* Featured Large Banner Card */
+.deal-banner-card {
+    background: linear-gradient(135deg, rgba(39, 174, 96, 0.92), rgba(26, 82, 118, 0.95)),
+                url('https://unsplash.com') center/cover no-repeat;
+    border-radius: 14px;
+    padding: 3rem 2.5rem;
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 8px 24px rgba(39, 174, 96, 0.15);
+}
+
+.deal-badge-accent {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #e74c3c;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.8rem;
+    padding: 0.4rem 0.9rem;
+    border-radius: 30px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.deal-banner-content h3 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+}
+
+.deal-banner-content p {
+    color: #f0fdf4;
+    font-size: 1.05rem;
+    margin-bottom: 2rem;
+    max-width: 520px;
+}
+
+/* Countdown Tickers */
+.deal-countdown {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.time-box {
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    min-width: 70px;
+    padding: 0.6rem 0.4rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.time-box span {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.time-box p {
+    font-size: 0.75rem;
+    color: #e2e8f0;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+/* Prices inside deal cards */
+.deal-price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.old-price {
+    font-size: 1.1rem;
+    color: #cbd5e0;
+    text-decoration: line-through;
+}
+
+.current-deal-price {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #ffffff;
+}
+
+.deal-btn {
+    background-color: #ffffff;
+    color: #27ae60;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    align-self: flex-start;
+}
+
+.deal-btn:hover {
+    background-color: #f7fafc;
+    transform: translateY(-2px);
+}
+
+/* Right Side Mini Layout Row */
+.mini-deals-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.mini-deal-item {
+    background-color: #f8fafc;
+    border: 1px solid #edf2f7;
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    position: relative;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.mini-deal-item:hover {
+    border-color: #2ecc71;
+    background-color: #ffffff;
+}
+
+.mini-tag {
+    background-color: #fef2f2;
+    color: #ef4444;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.3rem 0.6rem;
+    border-radius: 6px;
+    border: 1px solid #fee2e2;
+    white-space: nowrap;
+}
+
+.mini-deal-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+}
+
+.mini-deal-info h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #2d3748;
+    max-width: 260px;
+}
+
+.mini-price-row {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.mini-price-row .old-price {
+    font-size: 0.85rem;
+    color: #a0aec0;
+}
+
+.mini-price-row .current-deal-price {
+    font-size: 1.15rem;
+    color: #e74c3c;
+    font-weight: 700;
+}
+
+/* Adjust mini buy buttons inside list rows */
+.mini-cart-btn {
+    width: auto;
+    padding: 0.4rem 1.2rem;
+    font-size: 0.85rem;
+}
